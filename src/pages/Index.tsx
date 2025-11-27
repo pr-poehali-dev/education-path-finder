@@ -27,53 +27,91 @@ const Index = () => {
         </div>
       </nav>
 
-      <section id="hero" className="pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-5xl text-center animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Помогаем студентам выбирать правильные курсы и строить осознанную образовательную траекторию
-          </h1>
-          <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-            Интеллектуальный сервис, который связывает компетенции, дисциплины и карьерные пути — чтобы студент учился с пользой, 
-            а вуз получал глубокую аналитику по образовательным потребностям
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6">
-              🔵 Попробовать демо
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-              Для вузов — запросить презентацию
-            </Button>
+      <section id="hero" className="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/10 pointer-events-none" />
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Помогаем студентам выбирать правильные курсы и строить осознанную образовательную траекторию
+              </h1>
+              <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+                Интеллектуальный сервис, который связывает компетенции, дисциплины и карьерные пути — чтобы студент учился с пользой, 
+                а вуз получал глубокую аналитику по образовательным потребностям
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="text-lg px-8 py-6">
+                  🔵 Попробовать демо
+                </Button>
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+                  Для вузов — запросить презентацию
+                </Button>
+              </div>
+            </div>
+            <div className="animate-scale-in hidden lg:block">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-2xl" />
+                <img 
+                  src="https://cdn.poehali.dev/projects/a1204b55-16d8-4181-906c-26f3ad59a3a5/files/89fa053c-1885-4a56-975c-d5e20f1c358c.jpg" 
+                  alt="EduPath интерфейс" 
+                  className="relative rounded-2xl shadow-2xl w-full"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="problem" className="py-20 px-4 bg-secondary/30">
+      <section id="problem" className="py-20 px-4 bg-secondary/30 relative">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl font-bold mb-4">Проблема: хаос в выборе курсов</h2>
+            <Badge variant="destructive" className="mb-4 text-sm px-4 py-1">Проблема</Badge>
+            <h2 className="text-4xl font-bold mb-4">Хаос в выборе курсов</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Студенты теряются среди десятков дисциплин, не знают, что выбрать и как это влияет на карьеру. 
               Университеты дают список курсов, но не дают траекторию.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
-              { icon: "EyeOff", title: "Непрозрачность", desc: "Нет связки «курс → компетенции → профессия»" },
-              { icon: "Users", title: "Отсутствие персонализации", desc: "Все студенты получают одинаковый набор рекомендаций" },
-              { icon: "Shuffle", title: "Интуитивный выбор", desc: "Решение «наугад», без данных, отзывов и анализа рынка труда" },
-              { icon: "AlertCircle", title: "Нехватка информации", desc: "О содержании курса, преподавателях, опыте реальных студентов" }
+              { 
+                icon: "EyeOff", 
+                title: "Непрозрачность", 
+                desc: "Нет связки «курс → компетенции → профессия»",
+                color: "bg-red-500"
+              },
+              { 
+                icon: "Users", 
+                title: "Отсутствие персонализации", 
+                desc: "Все студенты получают одинаковый набор рекомендаций",
+                color: "bg-orange-500"
+              },
+              { 
+                icon: "Shuffle", 
+                title: "Интуитивный выбор", 
+                desc: "Решение «наугад», без данных, отзывов и анализа рынка труда",
+                color: "bg-yellow-500"
+              },
+              { 
+                icon: "AlertCircle", 
+                title: "Нехватка информации", 
+                desc: "О содержании курса, преподавателях, опыте реальных студентов",
+                color: "bg-rose-500"
+              }
             ].map((item, idx) => (
-              <Card key={idx} className="animate-scale-in hover:shadow-lg transition-shadow">
+              <Card key={idx} className="animate-scale-in hover:shadow-xl transition-all border-l-4 border-l-destructive hover:scale-105">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Icon name={item.icon} className="text-primary" size={24} />
+                  <div className="flex items-start gap-4">
+                    <div className={`w-14 h-14 ${item.color} rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                      <Icon name={item.icon} className="text-white" size={28} />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl mb-3">{item.title}</CardTitle>
+                      <p className="text-muted-foreground text-base leading-relaxed">{item.desc}</p>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl">{item.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.desc}</p>
-                </CardContent>
               </Card>
             ))}
           </div>
@@ -145,72 +183,66 @@ const Index = () => {
 
       <section id="features" className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-16">Возможности платформы</h2>
+          <div className="text-center mb-16">
+            <Badge className="mb-4 text-sm px-4 py-1">Решение</Badge>
+            <h2 className="text-4xl font-bold mb-4">Возможности платформы</h2>
+          </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 icon: "Target",
-                title: "Персональные рекомендации курсов",
-                problem: "Студенты выбирают интуитивно",
-                solution: "Алгоритм подбирает курсы под цели",
+                title: "Персональные рекомендации",
+                subtitle: "Алгоритм подбирает курсы под цели",
                 benefit: "Не тратят семестры впустую"
               },
               {
                 icon: "Link",
-                title: "Связка «курс → компетенции → профессия»",
-                problem: "Студент не понимает, к чему ведёт курс",
-                solution: "Визуализация связей",
+                title: "Курс → компетенции → профессия",
+                subtitle: "Визуализация связей",
                 benefit: "Осознанное планирование карьеры"
               },
               {
                 icon: "Star",
-                title: "Отзывы и рейтинги студентов",
-                problem: "Нет данных от реальных проходивших",
-                solution: "Отзывы, качество преподавателя, средняя нагрузка",
+                title: "Отзывы и рейтинги",
+                subtitle: "От реальных студентов",
                 benefit: "Уверенность перед выбором"
               },
               {
                 icon: "BarChart3",
                 title: "Аналитика для вузов",
-                problem: "Непонимание интересов студентов",
-                solution: "Отчёты, граф связей компетенций",
+                subtitle: "Отчёты, граф компетенций",
                 benefit: "Обновление учебных планов"
               },
               {
                 icon: "Compass",
-                title: "Визуальные траектории развития",
-                problem: "Невозможно увидеть путь целиком",
-                solution: "Карта навыков и шаги роста",
-                benefit: "Студент понимает, куда идёт"
+                title: "Визуальные траектории",
+                subtitle: "Карта навыков и шаги роста",
+                benefit: "Видимый путь развития"
               },
               {
                 icon: "Zap",
                 title: "Интеграция с LMS",
-                problem: "Разрозненные системы",
-                solution: "Единая точка доступа",
+                subtitle: "Единая точка доступа",
                 benefit: "Удобство и автоматизация"
               }
             ].map((feature, idx) => (
-              <Card key={idx} className="animate-scale-in hover:shadow-xl transition-all">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon name={feature.icon} className="text-primary" size={28} />
+              <Card key={idx} className="animate-scale-in hover:shadow-xl transition-all group">
+                <CardHeader className="space-y-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/60 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <Icon name={feature.icon} className="text-white" size={32} />
                   </div>
-                  <CardTitle className="text-lg">{feature.title}</CardTitle>
+                  <div>
+                    <CardTitle className="text-xl mb-2">{feature.title}</CardTitle>
+                    <p className="text-sm text-muted-foreground">{feature.subtitle}</p>
+                  </div>
                 </CardHeader>
-                <CardContent className="space-y-3 text-sm">
-                  <div>
-                    <span className="font-semibold text-destructive">Проблема:</span>
-                    <p className="text-muted-foreground mt-1">{feature.problem}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-primary">Решение:</span>
-                    <p className="text-muted-foreground mt-1">{feature.solution}</p>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-green-600">Выгода:</span>
-                    <p className="text-muted-foreground mt-1">{feature.benefit}</p>
+                <CardContent>
+                  <div className="pt-4 border-t border-border">
+                    <div className="flex items-start gap-2">
+                      <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0 mt-0.5" size={18} />
+                      <p className="text-sm font-medium text-green-600">{feature.benefit}</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
