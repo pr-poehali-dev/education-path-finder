@@ -48,11 +48,11 @@ const Index = () => {
                 </Button>
               </div>
             </div>
-            <div className="animate-scale-in hidden lg:block">
-              <div className="relative">
+            <div className="animate-scale-in hidden lg:flex justify-center items-center">
+              <div className="relative w-3/4">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-2xl" />
                 <img 
-                  src="https://cdn.poehali.dev/projects/a1204b55-16d8-4181-906c-26f3ad59a3a5/files/92ea81ae-b740-43bb-8c6f-c0dc52a6b80e.jpg" 
+                  src="https://cdn.poehali.dev/projects/a1204b55-16d8-4181-906c-26f3ad59a3a5/files/02f72365-8afc-4fc4-84bc-7f91443addd7.jpg" 
                   alt="EduPath интерфейс" 
                   className="relative rounded-2xl shadow-2xl w-full"
                 />
