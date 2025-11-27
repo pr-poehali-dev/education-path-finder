@@ -33,7 +33,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Помогаем студентам выбирать правильные курсы и строить осознанную образовательную траекторию
+                Помогаем выбирать правильные курсы и строить свою траекторию
               </h1>
               <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
                 Интеллектуальный сервис, который связывает компетенции, дисциплины и карьерные пути — чтобы студент учился с пользой, 
@@ -52,7 +52,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-2xl" />
                 <img 
-                  src="https://cdn.poehali.dev/projects/a1204b55-16d8-4181-906c-26f3ad59a3a5/files/89fa053c-1885-4a56-975c-d5e20f1c358c.jpg" 
+                  src="https://cdn.poehali.dev/projects/a1204b55-16d8-4181-906c-26f3ad59a3a5/files/92ea81ae-b740-43bb-8c6f-c0dc52a6b80e.jpg" 
                   alt="EduPath интерфейс" 
                   className="relative rounded-2xl shadow-2xl w-full"
                 />
